@@ -467,8 +467,8 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 			if (heroRec.intersects(sortilegesRec)) {
 				touch = false;
 				shoot = false;
-				shot.setX(1000);
-				shot.setY(400);
+				shot.setX(0);
+				shot.setY(0);
 			}
 		}
 		return false;
@@ -521,8 +521,8 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 		if (sortilegesRec.intersects(heroRec)) {
 			touch = false;
 			shoot = false;
-			shot.setX(1000);
-			shot.setY(400);
+			shot.setX(0);
+			shot.setY(0);
 			Shot.remove(0);
 			return true;
 		}
@@ -655,10 +655,11 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 				shot = (Shot) Shot.get(i);
 				Rectangle sortilegesRec = shot.getBounds();
 				if (mobileRec.intersects(sortilegesRec)) {
+					System.out.println(mobileRec);
 					touch = true;
 					prisond1 = true;
-					daemon1.setX(10);
-					daemon1.setY(10);
+					daemon1.setX(0);
+					daemon1.setY(0);
 					Daemon1.remove(0);
 					return true;
 				}
@@ -668,10 +669,11 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 				shot = (Shot) Shot.get(i);
 				Rectangle sortilegesRec = shot.getBounds();
 				if (mobileRec.intersects(sortilegesRec)) {
+					System.out.println(mobileRec);
 					touch = true;
 					prisond2 = true;
-					daemon2.setX(11);
-					daemon2.setY(10);
+					daemon2.setX(0);
+					daemon2.setY(0);
 					Daemon2.remove(0);
 					return true;
 				}
@@ -681,10 +683,11 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 				shot = (Shot) Shot.get(i);
 				Rectangle sortilegesRec = shot.getBounds();
 				if (mobileRec.intersects(sortilegesRec)) {
+					System.out.println(mobileRec);
 					touch = true;
 					prisond3 = true;
-					daemon3.setX(12);
-					daemon3.setY(10);
+					daemon3.setX(0);
+					daemon3.setY(0);
 					Daemon3.remove(0);
 					return true;
 				}
@@ -694,10 +697,11 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 				shot = (Shot) Shot.get(i);
 				Rectangle sortilegesRec = shot.getBounds();
 				if (mobileRec.intersects(sortilegesRec)) {
+					System.out.println(mobileRec);
 					touch = true;
 					prisond4 = true;
-					daemon4.setX(13);
-					daemon4.setY(10);
+					daemon4.setX(0);
+					daemon4.setY(0);
 					Daemon4.remove(0);
 					return true;
 				}
@@ -780,8 +784,8 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 					score += 250;
 					touch = true;
 					prisond1 = true;
-					daemon1.setX(10);
-					daemon1.setY(10);
+					daemon1.setX(0);
+					daemon1.setY(0);
 					Daemon1.remove(0);
 					return true;
 				}
@@ -794,8 +798,8 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 					score += 250;
 					touch = true;
 					prisond2 = true;
-					daemon2.setX(11);
-					daemon2.setY(10);
+					daemon2.setX(0);
+					daemon2.setY(0);
 					Daemon2.remove(0);
 					return true;
 				}
@@ -808,8 +812,8 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 					score += 250;
 					touch = true;
 					prisond3 = true;
-					daemon3.setX(12);
-					daemon3.setY(10);
+					daemon3.setX(0);
+					daemon3.setY(0);
 					Daemon3.remove(0);
 					return true;
 				}
@@ -821,8 +825,8 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 					score += 250;
 					touch = true;
 					prisond4 = true;
-					daemon4.setX(13);
-					daemon4.setY(10);
+					daemon4.setX(0);
+					daemon4.setY(0);
 					Daemon4.remove(0);
 					return true;
 				}
