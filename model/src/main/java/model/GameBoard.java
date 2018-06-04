@@ -73,6 +73,9 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 		addKeyListener(this);
 	}
 
+	/**
+	 * The method that generate the level.
+	 */
 	public void generateLevel() {
 		try {
 			fr = new FileReader("Maps/level" + level + ".level");
@@ -177,6 +180,9 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 		}
 	}
 
+	/**
+	 * The method that will give the sprite to each element in the map.
+	 */
 	public void paint(Graphics g) {
 		super.paint(g);
 		Graphics2D g2d = (Graphics2D) g;
@@ -285,6 +291,9 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 		repaint();
 	}
 
+	/**
+	 * method for the fireball movement.
+	 */
 	public void Shoot() {
 
 		if (shoot == true) {
@@ -325,6 +334,9 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 
 	}
 
+	/**
+	 * The method for the fireball movement.
+	 */
 	public void FollowShoot() {
 
 		if (shoot == true) {
@@ -405,6 +417,11 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 		}
 	}
 
+	/**
+	 * method that will check if there is a collision between two elements.
+	 * @param direction
+	 * @return
+	 */
 	public boolean CheckCollision(String direction) {
 		Rectangle heroRec = hero.getBounds();
 
@@ -457,6 +474,11 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 		return false;
 	}
 
+	/**
+	 * method to check if a monster touch the hero, and then restart the map.
+	 * @param mobile
+	 * @return
+	 */
 	public boolean DaemonEat(Mobile mobile) {
 		Rectangle mobileRec = mobile.getBounds();
 		if (mobile.getX() < hero.getX()) {
@@ -479,6 +501,10 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 		return false;
 	}
 
+	/**
+	 * method for the fireball, the way it have to make to return to the hero.
+	 * @return
+	 */
 	public boolean ShotRemove() {
 		Rectangle sortilegesRec = shot.getBounds();
 		if (shot.getX() < hero.getX()) {
@@ -503,6 +529,9 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 		return false;
 	}
 
+	/**
+	 * method to erase a collectable (purses and key), and to open the door to pass to the next level.
+	 */
 	public void Objectif() {
 		Rectangle heroRec = hero.getBounds();
 		for (int i = 0; i < Purses.size(); i++) {
@@ -535,6 +564,12 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 		}
 	}
 
+	/**
+	 * Check the collision between a monster and an element.
+	 * @param direction
+	 * @param mobile
+	 * @return
+	 */
 	public boolean DaemonCollision(String direction, Mobile mobile) {
 		Rectangle mobileRec = mobile.getBounds();
 
@@ -671,6 +706,11 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 		return false;
 	}
 
+	/**
+	 * method to check if the shot is in collision with an element.
+	 * @param direction
+	 * @return
+	 */
 	public boolean CheckShot(String direction) {
 
 		if (shoot == true) {
@@ -791,6 +831,10 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 		return false;
 	}
 
+	/**
+	 * Path Finding for the monster1.
+	 * @param mobile
+	 */
 	public void pathToHero1(Mobile mobile) {
 
 		int PlusRapide;
@@ -895,6 +939,10 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 		}
 	}
 
+	/**
+	 * Path Finding for the monster2.
+	 * @param mobile
+	 */
 	public void pathToHero2(Mobile mobile) {
 
 		int PlusRapide;
@@ -956,6 +1004,11 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 		}
 	}
 
+	/**
+	 * Path Finding for the monster3.
+	 * @param mobile
+	 */
+	
 	public void pathToHero3(Mobile mobile) {
 		if (mobile.getX() < hero.getX()) {
 			if (!DaemonCollision("RIGHT", mobile)) {
@@ -982,6 +1035,10 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 		}
 	}
 
+	/**
+	 * Path Finding for the monster4.
+	 * @param mobile
+	 */
 	public void pathToHero4(Mobile mobile) {
 
 		if (mobile.getY() < hero.getY()) {
@@ -1009,6 +1066,7 @@ public class GameBoard extends JPanel implements KeyListener, IModel {
 		}
 	}
 
+	
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		FollowShoot();

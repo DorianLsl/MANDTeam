@@ -6,6 +6,10 @@ import view.ViewFacade;
 
 public abstract class Main {
 
+	/**
+	 * The main method
+	 * @param args
+	 */
 	public static void main(final String[] args) {
 
 		ViewFacade view = new ViewFacade();

@@ -10,6 +10,11 @@ public class Daemon4 extends Mobile{
 
 	Image Monster4;
 
+	/**
+	 * Define the monster location.
+	 * @param Startx
+	 * @param Starty
+	 */
 	public Daemon4(int Startx, int Starty){
 
 		x = Startx;
@@ -20,6 +25,10 @@ public class Daemon4 extends Mobile{
 		
 	}
 
+	/**
+	 * get the monster's sprite.
+	 * @return
+	 */
 	public Image getImage(){
 		return Monster4;
 	}

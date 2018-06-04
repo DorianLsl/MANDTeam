@@ -16,6 +16,11 @@ public class Controller {
 	 *            the model
 	 * 
 	 */
+	/**
+	 * Constructor for the controller.
+	 * @param v
+	 * @param m
+	 */
 	public Controller(IView v, IModel m) {
 		view = v;
 		model = m;

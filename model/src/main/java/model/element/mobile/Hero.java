@@ -19,6 +19,11 @@ public class Hero extends Mobile {
 	ImageIcon iLorannUpLeft = new ImageIcon("Images/lorann_ul.png");
 	ImageIcon iLorannUpRight = new ImageIcon("Images/lorann_ur.png");
 
+	/**
+	 * Define the Hero location.
+	 * @param Startx
+	 * @param Starty
+	 */
 	public Hero(int Startx, int Starty) {
 		this.x = Startx;
 		this.y = Starty;
@@ -27,6 +32,10 @@ public class Hero extends Mobile {
 		LorannImg = iLorannImg.getImage();
 	}
 
+	/**
+	 * get the Hero's sprite.
+	 * @return
+	 */
 	public Image getImage() {
 		if (this.getDir() == "DOWN") {
 			LorannImg = iLorannDown.getImage();

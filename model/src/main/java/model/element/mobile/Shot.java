@@ -17,6 +17,11 @@ public class Shot extends Mobile {
 	ImageIcon iShot4 = new ImageIcon("Images/fireball_4.png");
 	ImageIcon iShot5 = new ImageIcon("Images/fireball_5.png");
 
+	/**
+	 * Define the fireball location.
+	 * @param Startx
+	 * @param Starty
+	 */
 	public Shot(int Startx, int Starty) {
 		x = Startx;
 		y = Starty;
@@ -25,6 +30,10 @@ public class Shot extends Mobile {
 		Shot = iShot.getImage();
 	}
 
+	/**
+	 * get the fireball's sprite.
+	 * @return
+	 */
 	public Image getImage() {
 		if (StateShot == 0) {
 			Shot = iShot1.getImage();
